@@ -5,7 +5,7 @@ const Router = express.Router();
 
 Router.get("/home", (req, res) => {
   const sql =
-    "SELECT id, name, destination, image, prix, description, evenement_date, notes FROM voyages";
+    "SELECT id, name, destination, image, prix, description, evenement_date, notes FROM voyages ORDER BY notes DESC";
 
   connection.query(sql, (err, result) => {
     if (err) throw err;
