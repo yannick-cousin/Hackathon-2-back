@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
 
-app.use('/home', voyages);
+app.use('/voyages', voyages);
 app.use('/historique', historique);
 app.use('/public', express.static('public'));
 
