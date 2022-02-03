@@ -5,7 +5,8 @@ const fetch = require('node-fetch');
 const bodyParser = require('body-parser');
 require('dotenv').config();
 
-const bus = require('./src/routes/bus.js');
+const voyages = require('./src/routes/voyages.js');
+const historique = require('./src/routes/historique.js');
 
 const app = express();
 
@@ -14,7 +15,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
 
-app.use('/bus', bus);
+app.use('/home', voyages);
+app.use('/historique', historique);
 app.use('/public', express.static('public'));
 
 let server = app.listen(3030, () => {
