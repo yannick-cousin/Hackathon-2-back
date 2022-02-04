@@ -18,7 +18,7 @@ Router.get('/home', (req, res) => {
 	console.log('GET on /voyages/home');
 });
 
-Router.get('/reservation', (req, res) => {
+Router.put('/reservation', (req, res) => {
 	const sql = 'SELECT * FROM voyages WHERE id=?';
 	const values = [req.body.id];
 
